@@ -43,7 +43,7 @@ class Database {
         // Implement the query to insert a user
         // user is the document that we want to insert
         // remeber once it's finish to comment callback('Error inserting user');
-        
+        database.collection('users').insertOne(user,callback);
         callback('Error inserting user');
       }
     });
@@ -57,7 +57,7 @@ class Database {
         //  LAB 2
         // Implement the query to insert a user
         // remeber once it's finish to comment callback('Error listing users');
-        
+        database.collection('users').find({},callback);
         callback('Error listing users');
       }
     });
@@ -72,7 +72,7 @@ class Database {
         // Implement the query to delete a user
         // firstName is the name of user that we want to delete
         // remeber once it's finish to comment callback('Error deleting user');
-        
+        database.collection('users').deleteOne({"firstName":firstName},callback);
         callback('Error deleting user');
       }
     });
@@ -87,7 +87,7 @@ class Database {
         // Implement the query to insert a product
         // product is the document to insert
         // remeber once it's finish to comment callback('Error inserting product');
-        
+        database.collection('products').insertOne(product,callback);
         callback('Error inserting product');
       }
     });
@@ -101,7 +101,7 @@ class Database {
         // LAB 5
         // Implement the query to list all products
         // remeber once it's finish to comment callback('Error listing products');
-        
+        database.collection('products').find({},callback);
         callback('Error listing products');
       }
     });
@@ -116,7 +116,7 @@ class Database {
         // Implement the query to delete a product
         // productName is the name of the producto to delete 
         // remeber once it's finish to comment callback('Error deleting product');
-        
+        database.collection('products').deleteOne({"name":productName},callback);
         callback('Error deleting product');
       }
     });
